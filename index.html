@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
         <div class="flex main">
             <div class="logo"><img src="if_icon-72-lightning_315946.svg" height=80px></div>
             <div class="title">TAROT</div>
         </div>
         <!-- Trigger/Open The Modal -->
-
-        <div id="myBtn" class="clarity_button">Unlock</div>
+        <div id="myBtn" class="clarity_button" onClick="random();">Unlock</div>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
@@ -26,19 +23,15 @@
                     <p>find clarity!</p>
             </div>
         </div>
-
-
         <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
             $(function() {
-
                 // When the user clicks the button, open the modal 
                 $("body").on("click", "#myBtn", function() {
                     console.log("TEST");
                     $("#myModal").show();
                     return false;
                 });
-
 
                 // When the user clicks anywhere outside of the modal, close it
                 $(window).on("click", function(event) {
@@ -47,8 +40,52 @@
                     }
                 });
             });
+            
+            function random() {
+                var theImages = [{
+                    src: "cards/2.png",
+                    width: "225",
+                    height: "450"
+                }, {
+                    src: "cards/6.png",
+                    width: "225",
+                    height: "450"
+                }, {
+                    src: "cards/11.png",
+                    width: "225",
+                    height: "450"
+                }];
+
+                var preBuffer = [];
+                for (var i = 0, j = theImages.length; i < j; i++) {
+                    preBuffer[i] = new Image();
+                    preBuffer[i].src = theImages[i].src;
+                    preBuffer[i].width = theImages[i].width;
+                    preBuffer[i].height = theImages[i].height;
+                }
+
+            // create random image number
+              function getRandomInt(min,max) 
+                {
+                  //  return Math.floor(Math.random() * (max - min + 1)) + min;
+
+            imn = Math.floor(Math.random() * (max - min + 1)) + min;
+                return preBuffer[imn];
+                }  
+
+            // 0 is first image,   preBuffer.length - 1) is  last image
+
+            var newImage = getRandomInt(0, preBuffer.length - 1);
+
+            // remove the previous images
+            var images = document.getElementsByTagName('img');
+            var l = images.length;
+            for (var p = 0; p < l; p++) {
+                images[0].parentNode.removeChild(images[0]);
+            }
+            // display the image  
+            document.body.appendChild(newImage);
+            }
         </script>
-
     </body>
-
 </html>

@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Play|Asap|Luckiest+Guy|Fredericka+the+Great|Khand);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: black;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+/* The Modal (background) */
+
+.title {
+    font-family: 'Khand', sans-serif;
+    font-size: 3.2em;
+    color: white;
+}
+
+.clarity_button {
+    font-family: 'Khand', sans-serif;
+    padding: 16px 32px;
+    border: 3px solid white;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 0%;
+    color: white;
+}
+
+.clarity_button:hover {
+    background: #c24647;
+}
+
+.clarity_button:active {
+    color: yellow;
+    margin-top: 55px;
+    border: 3px solid yellow;
+}
+/* 
+border: 3px solid yellow; */
+.modal {
+    /*this is the background fade*/
+    font-family: 'Khand', sans-serif;
+    text-align: center;
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 5%;
+    right: 0;
+    height: 90%;
+    margin: 0 10px;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.card-wrap {
+    height: 70%;
+    background: url(cards/10.png) no-repeat center center;
+    background-size: auto 100%;
+}
+.modal-content {
+    font-family: 'Khand', sans-serif;
+    color:white;
+    border: 3px solid orange;
+    overflow: auto;
+    border-radius: 25px;
+    background-color: black;
+    height: calc(100% - 40px);
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.6s
+}
+.modal-content h2 {
+    font-size: 40px;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    border-radius: 25px;
+    background: black;
+    height:80%;
+    color: white;
+}
+
+.modal-body {
+    
+    color: white;
+    border-radius: 25px;
+}
+
+/* Add Animation */
+
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
